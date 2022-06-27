@@ -1,0 +1,10 @@
+<mat-form-field class="search-field" appearance="standard">
+  <input
+    #input
+    (change)="searchTerm(input.value); input.value = ''"
+    matInput
+    type="text"
+    class="search-input"
+    placeholder="Search for movie(s) using title or keywords..."
+  />
+</mat-form-field>

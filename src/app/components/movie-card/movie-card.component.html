@@ -1,0 +1,29 @@
+<div class="movies">
+  <mat-card *ngFor="let movie of movies; let i = index" class="movie">
+    <img
+      mat-card-image
+      [src]="img + movies[i].poster_path"
+      [alt]="movies[i].title"
+    />
+    <mat-card-subtitle
+      [ngClass]="{
+        green: movies[i].vote_average >= 7,
+        orange: movies[i].vote_average >= 5 && movies[i].vote_average < 7,
+        red: movies[i].vote_average < 5
+      }"
+      class="vote"
+      >{{ movies[i].vote_average }}</mat-card-subtitle
+    >
+    <mat-card-header>
+      <div class="header">
+        <mat-card-title>{{ movies[i].title }}</mat-card-title>
+      </div>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="overview">
+        {{ movies[i].overview }}
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
